@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t dougsleite/docker-react -f Dockerfile.dev .
+script:
+  - docker run dougsleite/docker-react npm run test -- --coverage
